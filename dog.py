@@ -1,3 +1,4 @@
+#this is an OOP example
 class dog():
     def __init__(self,breed,name,spots):
         self.Breed = breed #attributes of the class are written as "self.<attributeName"
