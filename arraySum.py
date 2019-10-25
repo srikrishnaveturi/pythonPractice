@@ -1,5 +1,5 @@
-ar = [3,4,7,8]
-c=0
+ar = [3,4,5,6,7,8]
+sum=0
 for n in range(len(ar)):
-    c = c + ar[n]
-print(c)
+    sum = sum + ar[n]
+print(sum)
