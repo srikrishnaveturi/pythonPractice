@@ -7,6 +7,7 @@ This is a collection of code snippets for you to learn Python3 basic programming
 3) [Error Handling](https://github.com/srikrishnaveturi/pythonPractice/new/master#error-handling)
 4) [Functions](https://github.com/srikrishnaveturi/pythonPractice/new/master#functions)
 5) [Data Structures](https://github.com/srikrishnaveturi/pythonPractice/new/master#data-structures)
+6) [Mathematics]()
 6) [Miscellaneous](https://github.com/srikrishnaveturi/pythonPractice/new/master#miscellaneous)
 7) [Calculator](https://github.com/srikrishnaveturi/pythonPractice/new/master#calculator)
 
@@ -26,6 +27,34 @@ class dog(animal):
         print("and i am a dog")
 myDog = dog()
 myDog.running()
+```
+
+_Animal Example with Polymorphism_
+```
+class animal():
+    def __init__(self):
+        print("i am an animal")
+    def eat(self):
+        print("i love eating")
+    def running(self):
+        print("i love running")
+class dog(animal):
+    def __init__(self):
+        animal.__init__(self)
+        print("and i am a dog")
+    def speak(self):
+        print("woof woof")
+class cat(animal):
+    def __init__(self):
+        animal.__init__(self)
+        print("and i am a cat")
+    def speak(self):
+        print("meow meow")
+
+dholu = dog()
+billu = cat()
+for x in (dholu,billu):
+    x.speak()
 ```
 _Person Example_
 ```
@@ -192,6 +221,204 @@ while(flag == True):
     print("the queue is : ")
     print(stack1[::-1],stack2)
 ```
+- ##  Mathematics:
+_Maximum number of points on a line_
+```
+cor=[]
+x=[]
+y=[]
+
+cor=input("Enter the coordinate points")
+cor=cor.split(" ")
+for i in range(len(cor)):
+    if i%2==0:
+        x.append(int(cor[i]))
+    else:
+        y.append(int(cor[i]))
+        
+slope=[]
+counts=[]
+for i in range(len(x)):
+    for j in range(len(x)):
+        if i!=j:
+            m=(y[j]-y[i])/(x[j]-x[i])
+            c=y[i]-(m*x[i])
+            slope.append([m,c])
+print(slope)
+for i in range(len(slope)):
+    count=0
+    for j in range(len(slope)):
+        if (slope[i][0]==slope[j][0]) and (slope[i][1]==slope[j][1] and i!=j):
+            count+=1
+    counts.append(count)
+print((max(counts)+1)/2)
+```
+
+_Roman arithmetic_
+```
+def number(num):
+    if(num==1):
+        print("I")
+    elif(num==5):
+        print("V")
+    elif(num==10):
+        print("X")
+    elif(num==50):
+        print("L")
+    elif(num==100):
+        print("C")
+    elif(num==500):
+        print("D")
+    elif(num==1000):
+        print("M")
+    else:
+
+
+        while(num>=900):
+            if(num>=900 and num<1000):
+                print("C",end="")
+                num=num+100
+            print("M",end="")
+            num=num-1000
+
+        while(num>=400):
+            if(num>=400 and num<500):
+                print("C",end="")
+                num=num+100
+            print("D",end="")
+            num=num-500
+
+
+        while(num>=90):
+            if(num>=90 and num<100):
+                print("X",end="")
+                num=num+10
+            print("C",end="")
+            num=num-100
+
+        while(num>=40):
+            if(num>=40 and num<50):
+                print("X",end="")
+                num=num+10
+            print("L",end="")
+            num=num-50
+
+
+
+        while(num>=9):
+            if(num==9):
+                print("I",end="")
+                num=num+1
+            print("X",end="")
+            num=num-10
+
+
+
+        while(num>=4):
+            if(num==4):
+                print("I",end="")
+                num=num+1
+            print("V",end="")
+            num=num-5
+
+
+        while(num>=1):
+            print("I",end="")
+            num=num-1
+            
+def roman(rom):
+    num=0
+    for i in range(len((rom))):
+        if rom[i]=="I":
+            num=num+1
+        elif rom[i]=="V":
+            if rom[i-1]=="I"and i!=0:
+                num=num+3
+            else:
+                num=num+5
+        elif rom[i]=="X":
+            if rom[i-1]=="I"and i!=0:
+                num=num+8
+            else:
+                num=num+10
+        elif rom[i]=="L":
+            if rom[i-1]=="X"and i!=0:
+                num=num+30
+            else:
+                num=num+50
+        elif rom[i]=="C":
+            if rom[i-1]=="X"and i!=0:
+                num=num+80
+            else:
+                num=num+100
+        elif rom[i]=="D":
+            if rom[i-1]=="C"and i!=0:
+                num=num+300
+            else:
+                num=num+500
+        elif rom[i]=="M":
+            if rom[i-1]=="C"and i!=0:
+                num=num+800
+            else:
+                num=num+1000
+    return num
+    
+a=input("Enter first number")
+b=input("Enter second number")
+c=input("Which operation do you want to perform 1. Add 2.Subtract 3. Multiply 4. Divide")
+a=roman(a)
+b=roman(b)
+if(c=="1"):
+    total=a+b
+elif(c=="2"):
+    total=a-b
+elif(c=="3"):
+    total=a*b
+elif(c=="4"):
+    total=a/b
+number(total)
+```
+
+_Armstrong Number_
+```
+def Armstrong(n):
+    a=str(n)
+    m=len(a)
+    summation=0
+    for i in a:
+        summation=summation+int(i)**m
+
+    if(summation==n):
+        print("This is an armstrong number")
+
+    else:
+        print("not an armstrong number")
+
+
+number=int(input("Enter number"))
+Armstrong(number)
+```
+
+_Fibonacci_
+```
+def Fibonacci(value):
+        if value<=0:
+            print("Value must not be less than or equal 0")
+        # First Fibonacci number is 0
+        elif value==1:
+            return 0
+        # Second Fibonacci number is 1
+        elif value==2:
+            return 1
+        else:
+            return Fibonacci(value-1)+Fibonacci(value-2)
+            
+try: 
+    value = int(input("Enter Fibonacci Value:\n"))
+    print(f"The {value}th Fibonacci Value is {Fibonacci(value)}")
+except:
+    print("Please only enter integers")
+```
 
 - ## Miscellaneous:
 _Sum of an array_
@@ -201,6 +428,17 @@ c=0
 for n in range(len(ar)):
     c = c + ar[n]
 print(c)
+```
+
+_Date Time_
+```
+from datetime import datetime
+
+now = datetime.now()
+
+print("Now it is", now)
+
+print("Now it is", now.strftime('%d %B %Y %H:%M'))
 ```
 
 - ##  Calculator:
