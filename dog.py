@@ -6,7 +6,7 @@ class dog():
         self.Spots = spots
     def barking(self):
         print("woof!")
-myDog = dog("huskie","tom",3)
+myDog = dog("huskie","tom", 3)
 print(myDog.Name)
 print("says")
 myDog.barking()
