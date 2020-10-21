@@ -7,7 +7,7 @@ This is a collection of code snippets for you to learn Python3 basic programming
 3) [Error Handling](https://github.com/srikrishnaveturi/pythonPractice/new/master#error-handling)
 4) [Functions](https://github.com/srikrishnaveturi/pythonPractice/new/master#functions)
 5) [Data Structures](https://github.com/srikrishnaveturi/pythonPractice/new/master#data-structures)
-6) [Mathematics]()
+6) [Mathematics](https://github.com/srikrishnaveturi/pythonPractice/new/master#mathematics)
 6) [Miscellaneous](https://github.com/srikrishnaveturi/pythonPractice/new/master#miscellaneous)
 7) [Calculator](https://github.com/srikrishnaveturi/pythonPractice/new/master#calculator)
 
@@ -221,7 +221,7 @@ while(flag == True):
     print("the queue is : ")
     print(stack1[::-1],stack2)
 ```
-- ##  Mathematics:
+- ## Mathematics:
 _Maximum number of points on a line_
 ```
 cor=[]
