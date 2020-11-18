@@ -6,4 +6,4 @@ print("Now it is", now)
 
 # time formatting
 
-print("Now it is", now.strftime('%d %B %Y %H:%M'))
+print("Now Time is", now.strftime('%d %B %Y %H:%M'))
